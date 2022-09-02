@@ -1,0 +1,29 @@
+my:
+  app:
+    dir: ./data
+
+micronaut:
+    application:
+        name: micronautResourcesIssue
+        instance:
+            id: ${random.shortuuid} # use for multi instance of same service 
+    server:
+        host: 0.0.0.0
+        port: 10080
+        serverHeader: micronautResourcesIssue
+        cors:
+            enabled: true
+    router:
+        static-resources:
+            default:
+                enabled: true   
+                mapping: "/static/**"  
+                paths: 
+                  - file:${my.app.dir}
+
+netty:
+  default:
+    allocator:
+      max-order: 3
+
+
