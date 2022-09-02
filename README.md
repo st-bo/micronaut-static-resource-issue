@@ -1,6 +1,8 @@
 # micronaut-static-resource-issue
 
 clone it
+
+git checkout master
   
 gradle run
   
